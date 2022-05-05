@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using first_api_app.Models;
 
 namespace first_api_app.Controllers
 {
@@ -12,16 +13,13 @@ namespace first_api_app.Controllers
 		}
 
 		[HttpGet()]
-		public ActionResult GetProjects()
+		public ActionResult<IList<Project>> GetProjects()
         {
-			
-			var projects = new List<Object>
-			{
-				new {id = 1, name = "Expense Manager"},
-				new {id = 2, name = "Bug Tracker"}
-			};
 
-			return new JsonResult(projects);
+			var projects = ProjectsService.Current.Projects;
+
+			//return new JsonResult(projects);
+			return Ok(projects);
         }
 
 		[HttpGet("{id}")]
