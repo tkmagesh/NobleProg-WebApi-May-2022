@@ -9,8 +9,27 @@ namespace first_api_app
       
 		public ProjectsService()
 		{
-			this.Projects.Add(new Project { Id = 1, Name = "Expense Manager", IsActive = true });
-			this.Projects.Add(new Project { Id = 2, Name = "Bug Tracker", IsActive = true });
+			this.Projects.Add(new Project {
+				Id = 1,
+				Name = "Expense Manager",
+				IsActive = true,
+				Bugs = new List<Bug>
+                {
+					new Bug { Id = 1, Name = "User access denied", Description=""},
+					new Bug { Id = 2, Name = "Application Not responding", Description=""}
+				}
+
+			});
+			this.Projects.Add(new Project {
+				Id = 2,
+				Name = "Bug Tracker",
+				IsActive = true,
+				Bugs = new List<Bug>
+				{
+					new Bug { Id = 3, Name = "Server communication failure", Description=""},
+					new Bug { Id = 4, Name = "Validation errors", Description=""}
+				}
+			});
 			this.Projects.Add(new Project { Id = 3, Name = "Time Tracker", IsActive = false });
 		}
 

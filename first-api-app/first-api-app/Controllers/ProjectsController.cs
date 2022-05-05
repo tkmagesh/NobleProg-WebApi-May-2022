@@ -4,6 +4,7 @@ using first_api_app.Models;
 
 namespace first_api_app.Controllers
 {
+	[ApiController]
 	[Route("api/projects")]
 	public class ProjectsController : ControllerBase
 	{
@@ -22,7 +23,7 @@ namespace first_api_app.Controllers
 			return Ok(projects);
         }
 
-		[HttpGet("{id}")]
+		[HttpGet("{id}", Name ="GetProjectById")]
 		public ActionResult<Project> GetProjectById(int id)
 		{
 			var project = ProjectsService.Current.Projects.FirstOrDefault(p => p.Id == id);
@@ -33,11 +34,31 @@ namespace first_api_app.Controllers
 			return Ok(project);
         }
 
-		[HttpPost()]
-		public string CreateProject()
+		[HttpPost]
+		public ActionResult<Project> CreateProject(ProjectInput newProjectData)
         {
-			return "A new project is created!";
+			var maxProjectId = ProjectsService.Current.Projects.Max(p => p.Id);
+			var newProject = new Project
+			{
+				Id = ++maxProjectId,
+				Name = newProjectData.Name,
+				IsActive = newProjectData.IsActive
+			};
+			ProjectsService.Current.Projects.Add(newProject);
+			return CreatedAtAction("GetProjectById", new { id = newProject.Id }, newProject);
         }
+
+		[HttpDelete("{id}")]
+		public ActionResult<Project> RemoveProject(int id)
+		{
+			var project = ProjectsService.Current.Projects.FirstOrDefault(p => p.Id == id);
+			if (project == null)
+			{
+				return NotFound();
+			}
+			ProjectsService.Current.Projects.Remove(project);
+			return Ok();
+		}
 	}
 }
 

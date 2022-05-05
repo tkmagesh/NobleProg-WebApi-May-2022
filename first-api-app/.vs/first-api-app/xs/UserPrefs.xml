@@ -1,4 +1,35 @@
 ﻿<Properties StartupConfiguration="{1426924E-C501-4B5C-AB3B-6607CBD1F08F}|Default">
-  <MonoDevelop.Ide.ItemProperties.first-api-app FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.first-api-app PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="first-api-app/first-api-app.csproj">
+    <Files>
+      <File FileName="first-api-app/Program.cs" Line="16" Column="2" />
+      <File FileName="first-api-app/Controllers/ProjectsController.cs" Line="4" Column="1" />
+      <File FileName="first-api-app/Models/Project.cs" Line="1" Column="1" />
+      <File FileName="first-api-app/ProjectsService.cs" Line="7" Column="3" />
+      <File FileName="first-api-app/Models/ProjectInput.cs" Line="11" Column="1" />
+      <File FileName="first-api-app/first-api-app.csproj" Line="8" Column="19" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="first-api-app" expanded="True">
+            <Node name="first-api-app" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
 </Properties>
