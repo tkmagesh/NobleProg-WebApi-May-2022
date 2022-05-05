@@ -1,0 +1,124 @@
+About You
+    Name
+    Experience
+    Primary Skillset
+    Experience in building APIs (if any)
+
+Schedule:
+    Commence    : 9:00 AM
+    Tea Break   : 10:30 AM (20 mins)
+    Lunch Break : 12:00 PM (45 mins)
+    Tea Break   : 2:30 PM (20 mins)
+    End         : 4:00 PM
+
+APIs
+
+Protocol Buffers
+
+Http Status Codes
+100 - 199 => Informational
+200 - 299 => Success
+300 - 399 => Redirection
+400 - 499 => Client Error
+500 - 599 => Server Error
+
+Design Considerations
+    URIs -> just paths to resource (data)
+    Query Strings -> for non-data elements (e.g. pagination, sort order)
+
+http://myapi.com/getProducts
+
+Nouns are good, but verbs are bad.
+GET http://myapi.com/products
+    http://myapi.com/orders
+    http://myapi.com/customers
+
+URIs can have identifiers, which are used to identify the resource.
+http://myapi.com/products/P-101
+http://myapi.com/products/Pen
+
+
+http://myapi.com/products?format=json
+
+Request
+Accept: application/json
+
+Response
+Content-Type : application/json
+
+
+Application to Application Communication Patterns
+    - Request & Response
+    - Client Streaming (Multiple Requests & One Response)
+    - Server Streaming (One Request & Multiple Responses) (Real-Time)
+    - Bidirectional Streaming (Real-Time)
+
+
+Advantages:
+    Standard Based (http, json, xml)
+    Technology Agnostic
+    Browser friendly
+    Independent of the UI & Data Storage
+    Best suited for Request & Response
+
+Disadvantages
+    Not meant for real-time applications
+    HTTP (textual) based
+
+
+http://myapi.com/match/{id}/score
+
+Server Sent Events (Server Streaming)
+    Content-Type : text/event-stream
+    connection: keep-alive
+
+    EventSource (HTML5 API)
+
+Web Sockets (Bidirectional Streaming)
+    WebSocket (HTML5 API)
+
+
+Micro Services
+
+RDBMS
+    Integrity of the data (when the data is undergoing changes)
+    Changes to be easy
+
+    - Reads are costly
+
+Product Master
+    Read Optimized
+    But updates are costly
+
+Customers who bought....
+    Analytical
+
+Reviews
+    Read Optimized
+    Append-only
+
+Realtime
+
+ASP.NET Core
+    Cross Platform
+    High Performance
+    Open Source
+
+    - Web applications
+    - Web APIs
+    - Mobile Apps Backend
+    - IOT applications
+
+Http Requests & Responses
+Serialize & Deserialize data
+Model Binding
+Model Validations
+Handlers
+Controllers & Actions
+OpenAPI
+    Specification for documenting REST APIs (Swagger)
+Entity Framework Core
+    ORM (Object Relational Mapper)
+
+Minimalistic APIs
+    
