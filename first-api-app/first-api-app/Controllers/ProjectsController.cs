@@ -23,13 +23,14 @@ namespace first_api_app.Controllers
         }
 
 		[HttpGet("{id}")]
-		public ActionResult GetProjectById(int id)
+		public ActionResult<Project> GetProjectById(int id)
 		{
-			var project = new {
-				id = id,
-				name = "Project - " + id
-			};
-			return new JsonResult(project);
+			var project = ProjectsService.Current.Projects.FirstOrDefault(p => p.Id == id);
+			if (project == null)
+            {
+				return NotFound();
+            }
+			return Ok(project);
         }
 
 		[HttpPost()]
